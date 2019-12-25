@@ -14,13 +14,13 @@ import com.aliyuncs.profile.DefaultProfile;
 public class PhoneCode {
 	/**
 	 * @param phone
-	 *            ·¢ËÍµ½µÄÊÖ»úºÅ
+	 *            å‘é€åˆ°çš„æ‰‹æœºå·
 	 * @param code
-	 *            ÑéÖ¤ÂëÄÚÈİ
+	 *            éªŒè¯ç å†…å®¹
 	 */
 	public static void sendCode(String phone, String code) {
-		DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAIpqRuVXclvHBH",
-				"N8pcciBL96gFSutcNxeAKhbT8sA5YL");
+		DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "KTAIaqRbVXdVyCbH",
+				"N87c4iBG93gwSuvYNx8AVhxT82AlYL");
 		IAcsClient client = new DefaultAcsClient(profile);
 
 		CommonRequest request = new CommonRequest();
@@ -29,11 +29,11 @@ public class PhoneCode {
 		request.setVersion("2017-05-25");
 		request.setAction("SendSms");
 		request.putQueryParameter("RegionId", "cn-hangzhou");
-		request.putQueryParameter("PhoneNumbers", phone);// ÊÖ»úºÅÂë
-		request.putQueryParameter("SignName", "Æ´XiXiÉÌ³Ç");// ¶ÌĞÅÇ©Ãû
-		request.putQueryParameter("TemplateCode", "SMS_193956782");// Ä£°å±àºÅ
+		request.putQueryParameter("PhoneNumbers", phone);// æ‰‹æœºå·ç 
+		request.putQueryParameter("SignName", "æ‹¼XiXiå•†åŸ");// çŸ­ä¿¡ç­¾å
+		request.putQueryParameter("TemplateCode", "SMS_192556982");// æ¨¡æ¿ç¼–å·
 
-		request.putQueryParameter("TemplateParam", "{\"code\":\"" + code + "\"}");// Ä£°åÖĞµÄ±äÁ¿JSON¶ÔÏó¸ñÊ½
+		request.putQueryParameter("TemplateParam", "{\"code\":\"" + code + "\"}");// æ¨¡æ¿ä¸­çš„å˜é‡JSONå¯¹è±¡æ ¼å¼
 		try {
 			CommonResponse response = client.getCommonResponse(request);
 			System.out.println(response.getData());
@@ -45,7 +45,7 @@ public class PhoneCode {
 	}
 
 	/**
-	 * @return Ëæ»úÉú³ÉµÄ6Î»ÑéÖ¤Âë
+	 * @return éšæœºç”Ÿæˆçš„6ä½éªŒè¯ç 
 	 */
 	public static String getCode() {
 		StringBuilder sb = new StringBuilder();
