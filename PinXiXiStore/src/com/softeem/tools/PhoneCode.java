@@ -19,8 +19,8 @@ public class PhoneCode {
 	 *            验证码内容
 	 */
 	public static void sendCode(String phone, String code) {
-		DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "KTAIaqRbVXdVyCbH",
-				"N87c4iBG93gwSuvYNx8AVhxT82AlYL");
+		DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "XXXKTAIaqXRbVXdVyXCbHXXX",
+				"XXXN87c4iBGXX93gwSuvYNXXx8AVhxT8X2AlYLXXX");
 		IAcsClient client = new DefaultAcsClient(profile);
 
 		CommonRequest request = new CommonRequest();
